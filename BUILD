@@ -11,6 +11,6 @@ objc_binary(
     infoplist = "src/Info.plist",
     storyboards = ["src/Base.lproj/Main.storyboard"],
     deps = [
-        "third_party/grpc:src/objective-c/RxLibrary",
+        "//third_party/grpc:RxLibrary",
     ],
 )
