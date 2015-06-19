@@ -2,12 +2,12 @@
 objc_binary(
     name = "BazelSample",
     srcs = [
-        "main.m",
-        "AppDelegate.m",
-        "ViewController.m",
+        "src/main.m",
+        "src/AppDelegate.m",
+        "src/ViewController.m",
     ],
-    hdrs = glob(["*.h"]),
-    asset_catalogs = ["Images.xcassets/AppIcon.appiconset/Contents.json"],
-    infoplist = "Info.plist",
-    storyboards = ["Base.lproj/Main.storyboard"],
+    hdrs = glob(["src/*.h"]),
+    asset_catalogs = ["src/Images.xcassets/AppIcon.appiconset/Contents.json"],
+    infoplist = "src/Info.plist",
+    storyboards = ["src/Base.lproj/Main.storyboard"],
 )
