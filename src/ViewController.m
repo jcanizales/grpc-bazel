@@ -33,12 +33,19 @@
 
 #import "ViewController.h"
 
+#import <GRXWriteable.h>
+#import <GRXWriter+Immediate.h>
+
 @implementation ViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  NSLog(@"Yay!");
+  GRXWriter *writer = [GRXWriter writerWithValue:@"Yay!"];
+  GRXWriteable *writeable = [GRXWriteable writeableWithSingleValueHandler:^(id value, NSError *errorOrNil) {
+    NSLog(@"%@", value);
+  }];
+  [writer startWithWriteable:writeable];
 }
 
 @end
