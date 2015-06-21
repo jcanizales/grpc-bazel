@@ -35,6 +35,7 @@
 
 #import <GRXWriteable.h>
 #import <GRXWriter+Immediate.h>
+#import <grpc/grpc.h>
 
 @implementation ViewController
 
@@ -46,6 +47,9 @@
     NSLog(@"%@", value);
   }];
   [writer startWithWriteable:writeable];
+
+  grpc_metadata_array array;
+  grpc_metadata_array_init(&array);
 }
 
 @end
